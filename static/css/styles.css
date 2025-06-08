@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(#3498db, #ffffff) no-repeat; 
+    background: linear-gradient(#dbca34, #85110f) no-repeat; 
     font-size: 0.9em !important;
 }
 
@@ -10,7 +10,7 @@ body {
 
 .header {
     text-align: center;
-    color: white;
+    color: rgb(133, 22, 22);
 }
 
 p {
