@@ -21,7 +21,7 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Artifacts
-artifacts/*
+#artifacts/*
 
 # DVC
 dvc.lock
