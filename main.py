@@ -1,3 +1,8 @@
+import os
+
+# Set MLflow environment variables BEFORE importing mlFlowProject or mlflow
+os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/shivakrishnamacha67/Churn_Prediction_Using_MLflow_DVC.mlflow"
+os.environ["MLFLOW_TRACKING_TOKEN"] = "d92bd692f786b75a761f1b7b154ad757d53b23d3"
 from mlFlowProject import logger
 from mlFlowProject.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from mlFlowProject.pipeline.stage_02_data_validation import DataValidationTrainingPipeline

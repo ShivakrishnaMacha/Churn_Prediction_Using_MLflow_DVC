@@ -4221,3 +4221,643 @@ x==========x]
 [2025-06-07 18:21:00,049: INFO: _internal: 127.0.0.1 - - [07/Jun/2025 18:21:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -]
 [2025-06-07 18:23:39,588: INFO: _internal: 127.0.0.1 - - [07/Jun/2025 18:23:39] "GET / HTTP/1.1" 200 -]
 [2025-06-07 18:23:39,631: INFO: _internal: 127.0.0.1 - - [07/Jun/2025 18:23:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -]
+[2025-06-08 13:56:35,020: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-06-08 13:56:35,037: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 13:56:35,049: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 13:56:35,063: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 13:56:35,064: INFO: common: created directory at: artifacts]
+[2025-06-08 13:56:35,064: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-06-08 13:56:36,333: INFO: data_ingestion: artifacts/data_ingestion/data.zip download! with following info: 
+Connection: close
+Content-Length: 267815
+Cache-Control: max-age=300
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+Content-Type: application/zip
+ETag: "fcf4e6e192bd02a6bf9d98ce1f322f865e4eca3980bccff3ea196f83b780509f"
+Strict-Transport-Security: max-age=31536000
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-XSS-Protection: 1; mode=block
+X-GitHub-Request-Id: DFAE:37CAC4:4ABEA5:58F186:6845CED3
+Accept-Ranges: bytes
+Date: Sun, 08 Jun 2025 17:56:36 GMT
+Via: 1.1 varnish
+X-Served-By: cache-ewr-kewr1740097-EWR
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1749405396.984660,VS0,VE86
+Vary: Authorization,Accept-Encoding
+Access-Control-Allow-Origin: *
+Cross-Origin-Resource-Policy: cross-origin
+X-Fastly-Request-ID: ecf0a025afe037924a6271fd048b20ad4d7f3e2e
+Expires: Sun, 08 Jun 2025 18:01:36 GMT
+Source-Age: 0
+
+]
+[2025-06-08 13:56:36,373: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-06-08 13:56:36,373: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2025-06-08 13:56:36,379: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 13:56:36,381: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 13:56:36,384: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 13:56:36,386: INFO: common: created directory at: artifacts]
+[2025-06-08 13:56:36,388: INFO: common: created directory at: artifacts/data_validation]
+[2025-06-08 13:56:36,432: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2025-06-08 13:56:36,432: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2025-06-08 13:56:36,446: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 13:56:36,447: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 13:56:36,450: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 13:56:36,450: INFO: common: created directory at: artifacts]
+[2025-06-08 13:56:36,451: INFO: common: created directory at: artifacts/data_transformation]
+[2025-06-08 13:56:41,959: INFO: data_transformation: Data split into training and test sets]
+[2025-06-08 13:56:41,960: INFO: data_transformation: Shape of preprocessed training data: (7498, 30)]
+[2025-06-08 13:56:41,960: INFO: data_transformation: Shape of preprocessed test data: (2500, 30)]
+[2025-06-08 13:56:41,962: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2025-06-08 13:56:41,962: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2025-06-08 13:56:41,969: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 13:56:41,971: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 13:56:41,973: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 13:56:41,974: INFO: common: created directory at: artifacts]
+[2025-06-08 13:56:41,974: INFO: common: created directory at: artifacts/model_trainer]
+[2025-06-08 13:56:45,983: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2025-06-08 13:56:45,983: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2025-06-08 13:56:45,988: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 13:56:45,989: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 13:56:45,991: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 13:56:45,992: INFO: common: created directory at: artifacts]
+[2025-06-08 13:56:45,994: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-06-08 13:56:46,579: INFO: common: json file saved at: artifacts\model_evaluation\metrics.json]
+[2025-06-08 13:57:00,900: ERROR: main: API request to endpoint /api/2.0/mlflow/registered-models/create failed with error code 403 != 200. Response body: '']
+Traceback (most recent call last):
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\main.py", line 58, in <module>
+    data_ingestion.main()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\pipeline\stage_05_model_evaluation.py", line 17, in main
+    model_evaluation_config.log_into_mlflow()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\components\model_evaluation.py", line 65, in log_into_mlflow
+    mlflow.sklearn.log_model(model, "model", registered_model_name="LightGBM")
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\sklearn\__init__.py", line 424, in log_model
+    return Model.log(
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\models\model.py", line 562, in log
+    mlflow.register_model(
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_model_registry\fluent.py", line 77, in register_model
+    raise e
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_model_registry\fluent.py", line 68, in register_model
+    create_model_response = client.create_registered_model(name)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\client.py", line 1743, in create_registered_model
+    return self._get_registry_client().create_registered_model(name, tags, description)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_model_registry\client.py", line 63, in create_registered_model
+    return self.store.create_registered_model(name, tags, description)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\model_registry\rest_store.py", line 75, in create_registered_model
+    response_proto = self._call_endpoint(CreateRegisteredModel, req_body)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\model_registry\base_rest_store.py", line 42, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 281, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 213, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/registered-models/create failed with error code 403 != 200. Response body: ''
+[2025-06-08 14:03:19,557: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-06-08 14:03:19,561: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:03:19,562: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:03:19,565: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:03:19,565: INFO: common: created directory at: artifacts]
+[2025-06-08 14:03:19,565: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-06-08 14:03:19,565: INFO: data_ingestion: File already exists of size: ~ 262 KB]
+[2025-06-08 14:03:19,573: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:03:19,573: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2025-06-08 14:03:19,579: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:03:19,580: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:03:19,583: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:03:19,583: INFO: common: created directory at: artifacts]
+[2025-06-08 14:03:19,585: INFO: common: created directory at: artifacts/data_validation]
+[2025-06-08 14:03:19,620: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:03:19,620: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2025-06-08 14:03:19,626: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:03:19,627: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:03:19,629: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:03:19,642: INFO: common: created directory at: artifacts]
+[2025-06-08 14:03:19,644: INFO: common: created directory at: artifacts/data_transformation]
+[2025-06-08 14:03:25,012: INFO: data_transformation: Data split into training and test sets]
+[2025-06-08 14:03:25,012: INFO: data_transformation: Shape of preprocessed training data: (7498, 30)]
+[2025-06-08 14:03:25,013: INFO: data_transformation: Shape of preprocessed test data: (2500, 30)]
+[2025-06-08 14:03:25,014: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:03:25,014: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2025-06-08 14:03:25,017: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:03:25,018: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:03:25,022: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:03:25,022: INFO: common: created directory at: artifacts]
+[2025-06-08 14:03:25,023: INFO: common: created directory at: artifacts/model_trainer]
+[2025-06-08 14:03:28,107: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:03:28,108: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2025-06-08 14:03:28,112: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:03:28,113: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:03:28,115: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:03:28,116: INFO: common: created directory at: artifacts]
+[2025-06-08 14:03:28,117: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-06-08 14:03:28,866: INFO: common: json file saved at: artifacts\model_evaluation\metrics.json]
+[2025-06-08 14:03:53,519: ERROR: main: API request to endpoint /api/2.0/mlflow/registered-models/create failed with error code 403 != 200. Response body: '']
+Traceback (most recent call last):
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\main.py", line 58, in <module>
+    data_ingestion.main()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\pipeline\stage_05_model_evaluation.py", line 17, in main
+    model_evaluation_config.log_into_mlflow()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\components\model_evaluation.py", line 65, in log_into_mlflow
+    mlflow.sklearn.log_model(model, "model", registered_model_name="LightGBM")
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\sklearn\__init__.py", line 424, in log_model
+    return Model.log(
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\models\model.py", line 562, in log
+    mlflow.register_model(
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_model_registry\fluent.py", line 77, in register_model
+    raise e
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_model_registry\fluent.py", line 68, in register_model
+    create_model_response = client.create_registered_model(name)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\client.py", line 1743, in create_registered_model
+    return self._get_registry_client().create_registered_model(name, tags, description)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_model_registry\client.py", line 63, in create_registered_model
+    return self.store.create_registered_model(name, tags, description)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\model_registry\rest_store.py", line 75, in create_registered_model
+    response_proto = self._call_endpoint(CreateRegisteredModel, req_body)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\model_registry\base_rest_store.py", line 42, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 281, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 213, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/registered-models/create failed with error code 403 != 200. Response body: ''
+[2025-06-08 14:06:41,555: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-06-08 14:06:41,560: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:06:41,562: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:06:41,567: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:06:41,569: INFO: common: created directory at: artifacts]
+[2025-06-08 14:06:41,569: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-06-08 14:06:41,570: INFO: data_ingestion: File already exists of size: ~ 262 KB]
+[2025-06-08 14:06:41,592: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:06:41,592: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2025-06-08 14:06:41,596: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:06:41,597: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:06:41,600: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:06:41,600: INFO: common: created directory at: artifacts]
+[2025-06-08 14:06:41,600: INFO: common: created directory at: artifacts/data_validation]
+[2025-06-08 14:06:41,633: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:06:41,633: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2025-06-08 14:06:41,638: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:06:41,639: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:06:41,642: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:06:41,642: INFO: common: created directory at: artifacts]
+[2025-06-08 14:06:41,643: INFO: common: created directory at: artifacts/data_transformation]
+[2025-06-08 14:06:46,999: INFO: data_transformation: Data split into training and test sets]
+[2025-06-08 14:06:47,000: INFO: data_transformation: Shape of preprocessed training data: (7498, 30)]
+[2025-06-08 14:06:47,000: INFO: data_transformation: Shape of preprocessed test data: (2500, 30)]
+[2025-06-08 14:06:47,002: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:06:47,002: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2025-06-08 14:06:47,006: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:06:47,007: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:06:47,010: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:06:47,011: INFO: common: created directory at: artifacts]
+[2025-06-08 14:06:47,011: INFO: common: created directory at: artifacts/model_trainer]
+[2025-06-08 14:06:50,327: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:06:50,327: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2025-06-08 14:06:50,332: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:06:50,335: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:06:50,338: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:06:50,339: INFO: common: created directory at: artifacts]
+[2025-06-08 14:06:50,341: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-06-08 14:06:50,940: ERROR: main: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: '']
+Traceback (most recent call last):
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\main.py", line 58, in <module>
+    data_ingestion.main()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\pipeline\stage_05_model_evaluation.py", line 17, in main
+    model_evaluation_config.log_into_mlflow()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\components\model_evaluation.py", line 53, in log_into_mlflow
+    with mlflow.start_run():
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\fluent.py", line 350, in start_run
+    active_run_obj = client.create_run(
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\client.py", line 275, in create_run
+    return self._tracking_client.create_run(experiment_id, start_time, tags, run_name)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 131, in create_run
+    return self.store.create_run(
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\tracking\rest_store.py", line 175, in create_run
+    response_proto = self._call_endpoint(CreateRun, req_body)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\tracking\rest_store.py", line 56, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 281, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 213, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: ''
+[2025-06-08 14:11:16,209: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-06-08 14:11:16,224: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:11:16,229: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:11:16,236: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:11:16,238: INFO: common: created directory at: artifacts]
+[2025-06-08 14:11:16,238: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-06-08 14:11:16,239: INFO: data_ingestion: File already exists of size: ~ 262 KB]
+[2025-06-08 14:11:16,246: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:11:16,246: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2025-06-08 14:11:16,252: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:11:16,253: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:11:16,255: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:11:16,256: INFO: common: created directory at: artifacts]
+[2025-06-08 14:11:16,256: INFO: common: created directory at: artifacts/data_validation]
+[2025-06-08 14:11:16,295: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:11:16,295: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2025-06-08 14:11:16,302: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:11:16,302: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:11:16,306: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:11:16,306: INFO: common: created directory at: artifacts]
+[2025-06-08 14:11:16,307: INFO: common: created directory at: artifacts/data_transformation]
+[2025-06-08 14:11:21,699: INFO: data_transformation: Data split into training and test sets]
+[2025-06-08 14:11:21,699: INFO: data_transformation: Shape of preprocessed training data: (7498, 30)]
+[2025-06-08 14:11:21,700: INFO: data_transformation: Shape of preprocessed test data: (2500, 30)]
+[2025-06-08 14:11:21,701: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:11:21,702: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2025-06-08 14:11:21,705: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:11:21,707: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:11:21,709: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:11:21,710: INFO: common: created directory at: artifacts]
+[2025-06-08 14:11:21,710: INFO: common: created directory at: artifacts/model_trainer]
+[2025-06-08 14:11:25,515: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:11:25,515: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2025-06-08 14:11:25,520: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:11:25,522: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:11:25,525: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:11:25,525: INFO: common: created directory at: artifacts]
+[2025-06-08 14:11:25,526: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-06-08 14:11:26,003: ERROR: main: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: '']
+Traceback (most recent call last):
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\main.py", line 58, in <module>
+    data_ingestion.main()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\pipeline\stage_05_model_evaluation.py", line 17, in main
+    model_evaluation_config.log_into_mlflow()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\components\model_evaluation.py", line 52, in log_into_mlflow
+    with mlflow.start_run():
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\fluent.py", line 350, in start_run
+    active_run_obj = client.create_run(
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\client.py", line 275, in create_run
+    return self._tracking_client.create_run(experiment_id, start_time, tags, run_name)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 131, in create_run
+    return self.store.create_run(
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\tracking\rest_store.py", line 175, in create_run
+    response_proto = self._call_endpoint(CreateRun, req_body)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\tracking\rest_store.py", line 56, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 281, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+  File "c:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 213, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: ''
+[2025-06-08 14:15:40,245: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-06-08 14:15:40,249: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:15:40,250: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:15:40,252: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:15:40,253: INFO: common: created directory at: artifacts]
+[2025-06-08 14:15:40,254: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-06-08 14:15:40,254: INFO: data_ingestion: File already exists of size: ~ 262 KB]
+[2025-06-08 14:15:40,260: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:15:40,260: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2025-06-08 14:15:40,264: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:15:40,265: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:15:40,267: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:15:40,268: INFO: common: created directory at: artifacts]
+[2025-06-08 14:15:40,268: INFO: common: created directory at: artifacts/data_validation]
+[2025-06-08 14:15:40,303: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:15:40,303: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2025-06-08 14:15:40,308: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:15:40,309: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:15:40,311: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:15:40,312: INFO: common: created directory at: artifacts]
+[2025-06-08 14:15:40,312: INFO: common: created directory at: artifacts/data_transformation]
+[2025-06-08 14:15:45,698: INFO: data_transformation: Data split into training and test sets]
+[2025-06-08 14:15:45,699: INFO: data_transformation: Shape of preprocessed training data: (7498, 30)]
+[2025-06-08 14:15:45,699: INFO: data_transformation: Shape of preprocessed test data: (2500, 30)]
+[2025-06-08 14:15:45,700: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:15:45,700: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2025-06-08 14:15:45,704: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:15:45,705: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:15:45,707: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:15:45,708: INFO: common: created directory at: artifacts]
+[2025-06-08 14:15:45,710: INFO: common: created directory at: artifacts/model_trainer]
+[2025-06-08 14:15:48,905: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2025-06-08 14:15:48,905: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2025-06-08 14:15:48,912: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-08 14:15:48,913: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-08 14:15:48,916: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-08 14:15:48,917: INFO: common: created directory at: artifacts]
+[2025-06-08 14:15:48,918: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-06-08 14:15:48,918: ERROR: main: 'ModelEvaluationConfig' object has no attribute 'mlflow_token']
+Traceback (most recent call last):
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\main.py", line 58, in <module>
+    data_ingestion.main()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\pipeline\stage_05_model_evaluation.py", line 16, in main
+    model_evaluation_config = ModelEvaluation(config=model_evaluation_config)
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\components\model_evaluation.py", line 24, in __init__
+    token = self.config.mlflow_token  # <-- you should add mlflow_token in your config class
+AttributeError: 'ModelEvaluationConfig' object has no attribute 'mlflow_token'
+[2025-06-09 12:23:31,354: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-06-09 12:23:31,415: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 12:23:31,449: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 12:23:31,485: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 12:23:31,489: INFO: common: created directory at: artifacts]
+[2025-06-09 12:23:31,492: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-06-09 12:23:31,494: INFO: data_ingestion: File already exists of size: ~ 262 KB]
+[2025-06-09 12:23:31,575: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-06-09 12:23:31,576: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2025-06-09 12:23:31,592: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 12:23:31,598: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 12:23:31,609: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 12:23:31,611: INFO: common: created directory at: artifacts]
+[2025-06-09 12:23:31,613: INFO: common: created directory at: artifacts/data_validation]
+[2025-06-09 12:23:31,742: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2025-06-09 12:23:31,742: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2025-06-09 12:23:31,794: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 12:23:31,799: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 12:23:31,813: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 12:23:31,816: INFO: common: created directory at: artifacts]
+[2025-06-09 12:23:31,817: INFO: common: created directory at: artifacts/data_transformation]
+[2025-06-09 12:23:53,322: INFO: data_transformation: Data split into training and test sets]
+[2025-06-09 12:23:53,323: INFO: data_transformation: Shape of preprocessed training data: (7498, 30)]
+[2025-06-09 12:23:53,324: INFO: data_transformation: Shape of preprocessed test data: (2500, 30)]
+[2025-06-09 12:23:53,328: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2025-06-09 12:23:53,330: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2025-06-09 12:23:53,348: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 12:23:53,358: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 12:23:53,373: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 12:23:53,375: INFO: common: created directory at: artifacts]
+[2025-06-09 12:23:53,379: INFO: common: created directory at: artifacts/model_trainer]
+[2025-06-09 12:24:04,930: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2025-06-09 12:24:04,930: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2025-06-09 12:24:04,942: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 12:24:04,945: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 12:24:04,956: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 12:24:04,960: INFO: common: created directory at: artifacts]
+[2025-06-09 12:24:04,962: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-06-09 12:24:06,830: ERROR: main: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: '']
+Traceback (most recent call last):
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\main.py", line 58, in <module>
+    data_ingestion.main()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\pipeline\stage_05_model_evaluation.py", line 17, in main
+    model_evaluation_config.log_into_mlflow()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\components\model_evaluation.py", line 50, in log_into_mlflow
+    with mlflow.start_run():
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\fluent.py", line 350, in start_run
+    active_run_obj = client.create_run(
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\client.py", line 275, in create_run
+    return self._tracking_client.create_run(experiment_id, start_time, tags, run_name)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 131, in create_run
+    return self.store.create_run(
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\tracking\rest_store.py", line 175, in create_run
+    response_proto = self._call_endpoint(CreateRun, req_body)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\tracking\rest_store.py", line 56, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 281, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 213, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: ''
+[2025-06-09 14:27:32,786: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-06-09 14:27:32,806: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 14:27:32,812: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 14:27:32,828: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 14:27:32,831: INFO: common: created directory at: artifacts]
+[2025-06-09 14:27:32,832: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-06-09 14:27:32,835: INFO: data_ingestion: File already exists of size: ~ 262 KB]
+[2025-06-09 14:27:32,856: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-06-09 14:27:32,857: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2025-06-09 14:27:32,883: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 14:27:32,892: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 14:27:32,909: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 14:27:32,912: INFO: common: created directory at: artifacts]
+[2025-06-09 14:27:32,915: INFO: common: created directory at: artifacts/data_validation]
+[2025-06-09 14:27:33,068: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2025-06-09 14:27:33,069: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2025-06-09 14:27:33,088: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 14:27:33,096: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 14:27:33,109: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 14:27:33,111: INFO: common: created directory at: artifacts]
+[2025-06-09 14:27:33,113: INFO: common: created directory at: artifacts/data_transformation]
+[2025-06-09 14:27:45,522: INFO: data_transformation: Data split into training and test sets]
+[2025-06-09 14:27:45,523: INFO: data_transformation: Shape of preprocessed training data: (7498, 30)]
+[2025-06-09 14:27:45,523: INFO: data_transformation: Shape of preprocessed test data: (2500, 30)]
+[2025-06-09 14:27:45,526: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2025-06-09 14:27:45,527: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2025-06-09 14:27:45,535: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 14:27:45,539: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 14:27:45,544: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 14:27:45,546: INFO: common: created directory at: artifacts]
+[2025-06-09 14:27:45,547: INFO: common: created directory at: artifacts/model_trainer]
+[2025-06-09 14:27:51,309: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2025-06-09 14:27:51,310: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2025-06-09 14:27:51,318: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 14:27:51,321: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 14:27:51,327: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 14:27:51,329: INFO: common: created directory at: artifacts]
+[2025-06-09 14:27:51,330: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-06-09 14:27:52,401: ERROR: main: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: '']
+Traceback (most recent call last):
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\main.py", line 58, in <module>
+    data_ingestion.main()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\pipeline\stage_05_model_evaluation.py", line 17, in main
+    model_evaluation_config.log_into_mlflow()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\components\model_evaluation.py", line 50, in log_into_mlflow
+    with mlflow.start_run():
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\fluent.py", line 350, in start_run
+    active_run_obj = client.create_run(
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\client.py", line 275, in create_run
+    return self._tracking_client.create_run(experiment_id, start_time, tags, run_name)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 131, in create_run
+    return self.store.create_run(
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\tracking\rest_store.py", line 175, in create_run
+    response_proto = self._call_endpoint(CreateRun, req_body)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\tracking\rest_store.py", line 56, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 281, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 213, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: ''
+[2025-06-09 14:31:10,917: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-06-09 14:31:10,935: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 14:31:10,940: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 14:31:10,952: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 14:31:10,955: INFO: common: created directory at: artifacts]
+[2025-06-09 14:31:10,958: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-06-09 14:31:10,959: INFO: data_ingestion: File already exists of size: ~ 262 KB]
+[2025-06-09 14:31:10,987: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-06-09 14:31:10,987: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2025-06-09 14:31:11,006: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 14:31:11,011: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 14:31:11,026: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 14:31:11,030: INFO: common: created directory at: artifacts]
+[2025-06-09 14:31:11,032: INFO: common: created directory at: artifacts/data_validation]
+[2025-06-09 14:31:11,171: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2025-06-09 14:31:11,171: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2025-06-09 14:31:11,184: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 14:31:11,187: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 14:31:11,194: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 14:31:11,196: INFO: common: created directory at: artifacts]
+[2025-06-09 14:31:11,197: INFO: common: created directory at: artifacts/data_transformation]
+[2025-06-09 14:31:23,660: INFO: data_transformation: Data split into training and test sets]
+[2025-06-09 14:31:23,661: INFO: data_transformation: Shape of preprocessed training data: (7498, 30)]
+[2025-06-09 14:31:23,661: INFO: data_transformation: Shape of preprocessed test data: (2500, 30)]
+[2025-06-09 14:31:23,663: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2025-06-09 14:31:23,664: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2025-06-09 14:31:23,671: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 14:31:23,674: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 14:31:23,680: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 14:31:23,681: INFO: common: created directory at: artifacts]
+[2025-06-09 14:31:23,683: INFO: common: created directory at: artifacts/model_trainer]
+[2025-06-09 14:31:29,950: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2025-06-09 14:31:29,950: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2025-06-09 14:31:29,964: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 14:31:29,968: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 14:31:29,980: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 14:31:29,983: INFO: common: created directory at: artifacts]
+[2025-06-09 14:31:29,986: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-06-09 14:31:31,047: ERROR: main: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: '']
+Traceback (most recent call last):
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\main.py", line 58, in <module>
+    data_ingestion.main()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\pipeline\stage_05_model_evaluation.py", line 17, in main
+    model_evaluation_config.log_into_mlflow()
+  File "c:\users\pc\desktop\end-to-end-customer-churn-prediction-using-mlflow-and-dvc-main\src\mlFlowProject\components\model_evaluation.py", line 50, in log_into_mlflow
+    with mlflow.start_run():
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\fluent.py", line 350, in start_run
+    active_run_obj = client.create_run(
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\client.py", line 275, in create_run
+    return self._tracking_client.create_run(experiment_id, start_time, tags, run_name)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 131, in create_run
+    return self.store.create_run(
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\tracking\rest_store.py", line 175, in create_run
+    response_proto = self._call_endpoint(CreateRun, req_body)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\store\tracking\rest_store.py", line 56, in _call_endpoint
+    return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 281, in call_endpoint
+    response = verify_rest_response(response, endpoint)
+  File "C:\Users\pc\Desktop\End-to-End-Customer-Churn-Prediction-using-MLflow-and-DVC-main\venv\lib\site-packages\mlflow\utils\rest_utils.py", line 213, in verify_rest_response
+    raise MlflowException(
+mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/runs/create failed with error code 403 != 200. Response body: ''
+[2025-06-09 15:26:11,629: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-06-09 15:26:11,650: INFO: helpers: Accessing as shivakrishnamacha67]
+[2025-06-09 15:26:12,242: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/shivakrishnamacha67/Churn_Prediction_Using_MLflow_DVC "HTTP/1.1 200 OK"]
+[2025-06-09 15:26:12,863: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-06-09 15:26:12,871: INFO: helpers: Initialized MLflow to track repo "shivakrishnamacha67/Churn_Prediction_Using_MLflow_DVC"]
+[2025-06-09 15:26:12,875: INFO: helpers: Repository shivakrishnamacha67/Churn_Prediction_Using_MLflow_DVC initialized!]
+[2025-06-09 15:29:08,274: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-06-09 15:29:08,296: INFO: helpers: Accessing as shivakrishnamacha67]
+[2025-06-09 15:29:08,929: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/shivakrishnamacha67/Churn_Prediction_Using_MLflow_DVC "HTTP/1.1 200 OK"]
+[2025-06-09 15:29:09,490: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2025-06-09 15:29:09,499: INFO: helpers: Initialized MLflow to track repo "shivakrishnamacha67/Churn_Prediction_Using_MLflow_DVC"]
+[2025-06-09 15:29:09,503: INFO: helpers: Repository shivakrishnamacha67/Churn_Prediction_Using_MLflow_DVC initialized!]
+[2025-06-09 15:29:09,791: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-06-09 15:29:09,823: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 15:29:09,829: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 15:29:09,841: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 15:29:09,844: INFO: common: created directory at: artifacts]
+[2025-06-09 15:29:09,846: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-06-09 15:29:09,848: INFO: data_ingestion: File already exists of size: ~ 262 KB]
+[2025-06-09 15:29:09,867: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-06-09 15:29:09,868: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2025-06-09 15:29:09,885: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 15:29:09,889: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 15:29:09,901: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 15:29:09,903: INFO: common: created directory at: artifacts]
+[2025-06-09 15:29:09,905: INFO: common: created directory at: artifacts/data_validation]
+[2025-06-09 15:29:10,036: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2025-06-09 15:29:10,037: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2025-06-09 15:29:10,056: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 15:29:10,061: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 15:29:10,073: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 15:29:10,075: INFO: common: created directory at: artifacts]
+[2025-06-09 15:29:10,077: INFO: common: created directory at: artifacts/data_transformation]
+[2025-06-09 15:29:23,896: INFO: data_transformation: Data split into training and test sets]
+[2025-06-09 15:29:23,897: INFO: data_transformation: Shape of preprocessed training data: (7498, 30)]
+[2025-06-09 15:29:23,897: INFO: data_transformation: Shape of preprocessed test data: (2500, 30)]
+[2025-06-09 15:29:23,900: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2025-06-09 15:29:23,900: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2025-06-09 15:29:23,907: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 15:29:23,910: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 15:29:23,916: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 15:29:23,917: INFO: common: created directory at: artifacts]
+[2025-06-09 15:29:23,922: INFO: common: created directory at: artifacts/model_trainer]
+[2025-06-09 15:29:31,801: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2025-06-09 15:29:31,802: INFO: main: >>>>>> stage Model evaluation stage started <<<<<<]
+[2025-06-09 15:29:31,816: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-06-09 15:29:31,820: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-06-09 15:29:31,831: INFO: common: yaml file: schema.yaml loaded successfully]
+[2025-06-09 15:29:31,834: INFO: common: created directory at: artifacts]
+[2025-06-09 15:29:31,836: INFO: common: created directory at: artifacts/model_evaluation]
+[2025-06-09 15:29:33,270: INFO: common: json file saved at: artifacts\model_evaluation\metrics.json]
+[2025-06-09 15:30:00,410: INFO: main: >>>>>> stage Model evaluation stage completed <<<<<<
+
+x==========x]
