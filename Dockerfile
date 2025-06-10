@@ -1,16 +1,24 @@
-FROM python:3.7
+FROM python:3.7-slim
 
-# Copy all files to the container
-COPY . /app
+# Avoid interactive prompts during dependencies install
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Set the working directory
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Set working directory
 WORKDIR /app
 
-# Install dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# Copy all files
+COPY . .
 
-# Expose port (Heroku uses PORT env variable, but Docker build needs a number)
+# Upgrade pip and install dependencies
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
+
+# Expose the port (Heroku uses dynamic $PORT)
 EXPOSE 5000
 
-# Run  app using Gunicorn
-CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
+# Run using Gunicorn with dynamic port from Heroku
+CMD ["gunicorn", "--workers=4", "--bind=0.0.0.0:$PORT", "app:app"]
